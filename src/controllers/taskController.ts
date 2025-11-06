@@ -21,3 +21,4 @@ function deleteTask(req: Request, res: Response, next: NextFunction) {
 }
 
 export default {getTasks, getTask, createTask, updateTask, deleteTask,}
+
