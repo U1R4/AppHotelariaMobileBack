@@ -8,30 +8,25 @@
     "start": "node dist/index.js",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/U1R4/AppHotelariaMobileBack.git"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/U1R4/AppHotelariaMobileBack/issues"
-  },
-  "homepage": "https://github.com/U1R4/AppHotelariaMobileBack#readme",
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "prettier": "^3.6.2"
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",
-    "@types/node": "^24.10.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.10.1",
+    "jest": "^30.2.0",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.6",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
   }
