@@ -1,9 +1,9 @@
-export default class Login {
-  email: string;
-  password: string;
+import { RowDataPacket } from "mysql2";
 
-  constructor(email:string, password:string) {   
-    this.email = email;
-    this.password = password;
-  }
+export type Client = RowDataPacket & {
+    id: number;
+    email: string;
+    senha: string;
+    cargo: string;
+    nome: string;
 }

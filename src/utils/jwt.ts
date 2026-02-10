@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const JWT_SECRET = process.env.JWT_SECRET!
+const JWT_SECRET = process.env.JWT_PASS!
 const DURATION = 60 *60 * 24
 
 export function createJWT(payload:object){

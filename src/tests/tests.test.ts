@@ -1,15 +1,37 @@
 const URL_LOGIN:string = "http://localhost:3000/api/login"
- 
+
 let newLogin = {
-    email: "aaa",
-    senha: "123"
+    email: "a1@a1.a1",
+    senha: "123",
 }
- 
-test("POST: /login = 201", async () => {
+
+let newClient = {
+    nome: "z",
+    email: "z@z.zzz",
+    senha: "123",
+    cpf: "zzz",
+    telefone: "zzz"
+}
+
+
+test("POST: api/login = 201", async () => {
     const res = await fetch(URL_LOGIN, {
         method: "POST",
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify(newLogin)
     })
+    expect(res.status).toBe(201) 
+    const json = await res.json()
+    console.log(json)
+}) 
+
+test("POST: api/client = 201", async () => {
+        const res = await fetch("http://localhost:3000/api/login/logon", {
+        method: "POST",
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify(newClient)
+    })
+    expect(res.status).toBe(201) 
+    const json = await res.json()
+    console.log(json)
 })
- 
