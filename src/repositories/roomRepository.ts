@@ -1,3 +1,4 @@
+import { RowDataPacket } from "mysql2";
 import {pool} from "../database/database";
 import {Room} from "../models/roomModel";
 
@@ -44,8 +45,8 @@ async function getRoomImage(quartoId: number) {
             imagens_quartos.quarto_id = ?;
     `
 
-    const [rows] = await pool.query(sql, [quaroId]);
-    return rows.map(rows->(rows.nome))
+   const [fotos] = await pool.query<RowDataPacket[]>(sql, [quartoId])
+    return fotos.map(foto=>(foto.nome))
 }
 
 export default {
