@@ -4,12 +4,14 @@ import routeLogin from "./login"
 import {createJWT} from "../utils/jwt";
 import { middleware } from "./jwtMiddleware";
 import routeRoom from "./room";
+import reserveRoute from "./reserve";
 
 const handlerRouter = Router();
 
 handlerRouter.use("/task", routeTask);
 handlerRouter.use("/api/login", routeLogin);
 handlerRouter.use("/api/room", routeRoom)
+handlerRouter.use("/api/reserve", middleware, reserveRoute)
 
 
 
