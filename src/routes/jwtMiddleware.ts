@@ -1,0 +1,21 @@
+import { Request, Response, NextFunction} from "express";
+import { verifyJWT } from "../utils/jwt";
+
+export function middleware(req:Request, res:Response, next:NextFunction){
+
+    const authHeader = req.headers.authorization;
+    if(!authHeader || !authHeader.startsWith("Bearer ")){
+        return res.status(401).json({message:"token nao fornecido"})
+    }
+
+    const token:string = authHeader?.split(" ")[1]!;
+    const payload = verifyJWT(token);
+
+    if(payload === undefined){
+        return res.status(401).json({message:"token invalido"})
+    }
+
+    (req as any).payload = payload;
+
+    next()
+}
