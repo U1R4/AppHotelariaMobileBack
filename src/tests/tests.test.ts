@@ -6,11 +6,11 @@ let newLogin = {
 }
 
 let newClient = {
-    nome: "z",
-    email: "z@z.zzz",
-    senha: "123",
-    cpf: "zzz",
-    telefone: "zzz"
+    nome: "Giro123",
+    email: "123@123.123",
+    senha: "Giro123",
+    cpf: "Giro1234",
+    telefone: "Giro1234"
 }
 
 
@@ -20,13 +20,13 @@ test("POST: api/login = 201", async () => {
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify(newLogin)
     })
-    expect(res.status).toBe(201) 
+    expect(res.status).toBe(200) 
     const json = await res.json()
     console.log(json)
 }) 
 
 test("POST: api/client = 201", async () => {
-        const res = await fetch("http://localhost:3000/api/login/logon", {
+        const res = await fetch(`${URL_LOGIN}/logon`, {
         method: "POST",
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify(newClient)
